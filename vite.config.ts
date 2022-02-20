@@ -11,8 +11,4 @@ export default defineConfig({
     worker({}),
     reactRefresh(),
   ],
-  define: {
-    "process.env": process.env,
-    "process.versions": process.versions
-  }
 })
