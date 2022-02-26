@@ -8,7 +8,9 @@
     "copy-module-workers-polyfill": "cp ./node_modules/module-workers-polyfill/module-workers-polyfill.min.js ./src/module-workers-polyfill.js"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "comlink": "^4.3.1",
+    "imagemagick-wasm-builds": "github:Armster15/imagemagick-wasm-builds",
     "module-workers-polyfill": "^0.3.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
@@ -17,9 +19,12 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react-refresh": "^1.3.1",
+    "type-fest": "^2.12.0",
     "typescript": "^4.3.2",
-    "vite": "^2.5.4",
-    "vite-plugin-comlink": "^2.1.0",
-    "vite-plugin-worker": "^1.0.5"
+    "util": "^0.12.4",
+    "vite": "^2.8.4"
+  },
+  "peerDependencies": {
+    "@imagemagick/magick-wasm": "^0.0.10"
   }
 }

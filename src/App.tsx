@@ -1,21 +1,23 @@
 import React, { useState } from 'react'
+import { importWorker } from './importWorker';
+import { AsyncReturnType } from "type-fest";
 
-import "./module-workers-polyfill.js"
-import base_worker from "comlink:./worker";
-const { hello } = base_worker();
+let worker: AsyncReturnType<typeof importWorker> | undefined;
+(async() => {
+  worker = await importWorker();
+})()
 
 function App() {
-  const [data, setData] = useState<string>()
-
+  const [data, setData] = useState<string>();
+  
   return (
     <div className="App">
       <button onClick={async () => {
         setData("loading");
-        setData(await hello())
+        setData(await worker?.sayHi())
       }}>
         Worker
       </button>
-
       <span>{data}</span>
     </div>
   )
